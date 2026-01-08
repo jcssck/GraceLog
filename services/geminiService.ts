@@ -9,7 +9,7 @@ export const getAIHelp = async (
   tags: string[],
   locale: Locale
 ): Promise<AIResponse> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY || '' });
   
   const systemInstruction = locale === 'ko' 
     ? `당신은 이재철 목사님의 신앙관을 가진 성경 묵상 도우미입니다. 
